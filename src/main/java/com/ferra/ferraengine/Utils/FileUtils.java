@@ -125,10 +125,18 @@ public class FileUtils {
     public static boolean isImage(String path) {
         String extension = getFileExtension(path);
         if (extension != null) {
-            return switch (extension) {
-                case "jpeg", "png", "ico", "gif", "tiff", "tif", "webP" -> true;
-                default -> false;
-            };
+            switch (extension) {
+                case "jpeg":
+                case "png":
+                case "ico":
+                case "gif":
+                case "tiff":
+                case "tif":
+                case "webP":
+                    return true;
+                default:
+                    return false;
+            }
         }
         return false;
     }
@@ -143,10 +151,17 @@ public class FileUtils {
     public static boolean isTextFile(String path) {
         String extension = getFileExtension(path);
         if (extension != null) {
-            return switch (extension) {
-                case "txt", "doc", "rtf", "pdf", "log", "tex" -> true;
-                default -> false;
-            };
+            switch (extension) {
+                case "txt":
+                case "doc":
+                case "rtf":
+                case "pdf":
+                case "log":
+                case "tex":
+                    return true;
+                default:
+                    return false;
+            }
         }
         return false;
     }

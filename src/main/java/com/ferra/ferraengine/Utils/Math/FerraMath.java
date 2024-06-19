@@ -55,7 +55,7 @@ public class FerraMath {
      * @return   Sine of radians.
      */
     public static float sin_rad(float rad) {
-        double i  = java.lang.Math.rint(rad * PI_INV);
+        double i  = Math.rint(rad * PI_INV);
         float x  = rad - (float)(i * PI);
         float qs = 1-2*((int)i & 1);
         float x2 = x*x;
@@ -232,8 +232,6 @@ public class FerraMath {
      * @param number   The number to be raised to a degree.
      * @param degree   Necessary degree.
      * @return   A number raised to a degree.
-     *
-     * @see FdLibm.Pow
      */
     @Experimental("I don't know if this method will be slightly faster than the unmodified method since testing is still being done.")
     public static float pow(float number, float degree) {

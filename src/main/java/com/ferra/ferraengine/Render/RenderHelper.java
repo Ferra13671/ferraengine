@@ -16,10 +16,13 @@ import static org.lwjgl.opengl.GL11.*;
  */
 
 public class RenderHelper {
-    private static final FloatBuffer textureCords = ByteBuffer.allocateDirect(8 * Float.BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer().put(new float[]{0,1  ,1,1,  1,0 ,0,0}).position(0);
+    private static final FloatBuffer textureCords = ByteBuffer.allocateDirect(8 * Float.BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer().put(new float[]{0,1  ,1,1,  1,0 ,0,0});
     private static final FloatBuffer customTextureCords = ByteBuffer.allocateDirect(8 * Float.BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer();
     private static final FloatBuffer rectVertex = ByteBuffer.allocateDirect(8 * Float.BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer();
 
+    static {
+        textureCords.position(1);
+    }
 
     /**
      * Enables blend(for normal rendering of transparency).
